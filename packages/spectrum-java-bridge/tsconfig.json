@@ -1,0 +1,4 @@
+{
+  "extends": "../../tsconfig.json",
+  "include": ["src", "test", "../spectrum-ts/src/types/ffmpeg-static.d.ts"]
+}

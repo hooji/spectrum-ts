@@ -17,6 +17,19 @@
         "spectrum-ts": "workspace:*",
       },
     },
+    "packages/spectrum-java-bridge": {
+      "name": "@spectrum-ts/java-bridge",
+      "version": "0.1.0",
+      "dependencies": {
+        "@photon-ai/otel": "^0.1.1",
+        "spectrum-ts": "workspace:*",
+        "zod": "^4.2.1",
+      },
+      "devDependencies": {
+        "@types/bun": "latest",
+        "typescript": "^5 || ^6.0.0",
+      },
+    },
     "packages/spectrum-ts": {
       "name": "spectrum-ts",
       "version": "2.0.0",
@@ -267,6 +280,8 @@
     "@rollup/rollup-win32-x64-msvc": ["@rollup/rollup-win32-x64-msvc@4.60.1", "", { "os": "win32", "cpu": "x64" }, "sha512-lWMnixq/QzxyhTV6NjQJ4SFo1J6PvOX8vUx5Wb4bBPsEb+8xZ89Bz6kOXpfXj9ak9AHTQVQzlgzBEc1SyM27xQ=="],
 
     "@spectrum-ts/example-basic": ["@spectrum-ts/example-basic@workspace:examples/basic"],
+
+    "@spectrum-ts/java-bridge": ["@spectrum-ts/java-bridge@workspace:packages/spectrum-java-bridge"],
 
     "@turbo/darwin-64": ["@turbo/darwin-64@2.9.3", "", { "os": "darwin", "cpu": "x64" }, "sha512-P8foouaP+y/p+hhEGBoZpzMbpVvUMwPjDpcy6wN7EYfvvyISD1USuV27qWkczecihwuPJzQ1lDBuL8ERcavTyg=="],
 
