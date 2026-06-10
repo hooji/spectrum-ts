@@ -32,7 +32,7 @@ Spectrum itself is a TypeScript/Bun framework with no network API of its own, so
    # → BRIDGE_LISTENING host=127.0.0.1 port=8787
    ```
 
-   > iMessage **local mode** can read messages and send text/attachments. Reactions, edits, unsends, typing indicators, and read receipts need a remote (Spectrum Cloud) iMessage instance — add `projectId`/`projectSecret` and `clients` to the config for that. Other channels (Telegram, WhatsApp Business, Slack) are additional `providers` entries; see the [bridge README](../packages/spectrum-java-bridge/README.md).
+   > iMessage **local mode** can read messages (including incoming tapback/emoji reactions, surfaced as `Content.Reaction`) and send text/attachments. *Sending* reactions, edits, unsends, typing indicators, and read receipts is not possible through Apple's local automation surface — those need a remote (Spectrum Cloud) iMessage instance: add `projectId`/`projectSecret` and `clients` to the config. Other channels (Telegram, WhatsApp Business, Slack) are additional `providers` entries; see the [bridge README](../packages/spectrum-java-bridge/README.md).
 
 4. **Build the Java client**:
 

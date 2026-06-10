@@ -9,6 +9,7 @@ import {
 } from "../../../content/reaction";
 import type { ProviderMessageRecord } from "../../../platform/types";
 import type { MessageCache } from "../cache";
+import { EMOJI_TO_TAPBACK, TAPBACK_TO_EMOJI } from "../shared/tapbacks";
 import type { IMessageMessage } from "../types";
 import { chatTypeFromGuid, toChatGuid, toMessageGuid } from "./ids";
 import {
@@ -21,21 +22,6 @@ type ReactionAddedEvent = Extract<
   MessageEvent,
   { type: "message.reactionAdded" }
 >;
-
-type TapbackKind = Exclude<SettableMessageReaction["kind"], "emoji">;
-
-const EMOJI_TO_TAPBACK: Readonly<Record<string, TapbackKind>> = {
-  "❤️": "love",
-  "👍": "like",
-  "👎": "dislike",
-  "😂": "laugh",
-  "‼️": "emphasize",
-  "❓": "question",
-};
-
-const TAPBACK_TO_EMOJI: Readonly<Record<string, string>> = Object.fromEntries(
-  Object.entries(EMOJI_TO_TAPBACK).map(([emoji, kind]) => [kind, emoji])
-);
 
 type RawProviderMessage = Pick<IMessageMessage, "content" | "id">;
 
